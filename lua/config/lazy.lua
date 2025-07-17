@@ -43,6 +43,7 @@ require("lazy").setup({
       'neovim/nvim-lspconfig',
       tag = 'v2.3.0',
     },
+    { 'tpope/vim-surround', tag = 'v2.2' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
