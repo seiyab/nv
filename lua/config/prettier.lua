@@ -64,7 +64,7 @@ local function format_with_prettier()
 end
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = { "*.js", "*.ts", "*.jsx", "*.tsx" },
+  pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.mjs", ".cjs" },
   callback = format_with_prettier,
 })
 
