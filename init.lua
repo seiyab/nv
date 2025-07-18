@@ -41,5 +41,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 require("config.lazy")
 require("config.telescope")
-require("config.ls-typescript")
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('eslint')
 require("config.prettier")
