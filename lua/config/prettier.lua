@@ -63,7 +63,7 @@ local function format_with_prettier()
   vim.cmd("edit!") -- reload buffer
 end
 
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { "*.js", "*.ts", "*.jsx", "*.tsx" },
   callback = format_with_prettier,
 })
