@@ -42,7 +42,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 require("config.lazy")
+
 require("config.telescope")
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('eslint')
 require("config.prettier")

@@ -44,6 +44,15 @@ require("lazy").setup({
       tag = 'v2.3.0',
     },
     { 'tpope/vim-surround', tag = 'v2.2' },
+    {
+      'stevearc/oil.nvim',
+      tag = 'v2.15.0',
+      ---@module 'oil'
+      ---@type oil.SetupOpts
+      opts = {},
+      dependencies = { "nvim-tree/nvim-web-devicons", tag = 'v0.100' },
+      lazy = false, -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
