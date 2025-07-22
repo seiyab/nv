@@ -12,6 +12,8 @@ vim.o.timeoutlen = 300
 
 vim.o.list = true
 vim.opt.listchars = { tab = '> ', nbsp = '.' }
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 vim.o.inccommand = 'split'
 vim.o.cursorline = true
