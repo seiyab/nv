@@ -8,7 +8,7 @@ vim.o.showmode = false
 vim.o.breakindent = true
 vim.o.signcolumn = 'yes'
 vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 800
 
 vim.o.list = true
 vim.opt.listchars = { tab = '> ', nbsp = '.' }
