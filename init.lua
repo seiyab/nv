@@ -47,5 +47,5 @@ require("config.telescope")
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
-vim.g.coc_node_path = vim.fn.trim(vim.fn.system('which node'))
+require("config.coc")
 
