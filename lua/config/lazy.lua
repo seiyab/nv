@@ -39,10 +39,7 @@ require("lazy").setup({
         },
       },
     },
-    {
-      'neovim/nvim-lspconfig',
-      tag = 'v2.3.0',
-    },
+    { 'neoclide/coc.nvim', branch = 'release' },
     { 'tpope/vim-surround', tag = 'v2.2' },
     {
       'stevearc/oil.nvim',
