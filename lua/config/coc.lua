@@ -37,10 +37,10 @@ local opts = {silent = true, noremap = true, expr = true, replace_keycodes = fal
 -- Use <c-space> to trigger completion
 keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 
--- Use `[g` and `]g` to navigate diagnostics
+-- Use `[d` and `]d` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-keyset("n", "]d", "<Plug>(coc-diagnostic-prev)", {silent = true}) -- "[d" in coc example
-keyset("n", "[d", "<Plug>(coc-diagnostic-next)", {silent = true}) -- "]d" in coc example
+keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", {silent = true}) -- "[g" in coc example
+keyset("n", "]d", "<Plug>(coc-diagnostic-next)", {silent = true}) -- "]g" in coc example
 
 
 -- GoTo code navigation (See also https://neovim.io/doc/user/lsp.html#lsp-defaults)
@@ -94,10 +94,10 @@ keyset("n", "<leader>grn", "<Plug>(coc-rename)", {silent = true}) --  "<leader>r
 -- Example: `<leader>aap` for current paragraph
 local opts = {silent = true, nowait = true}
 -- keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
-keyset("n", "<leader>gra", "<Plug>(coc-codeaction-selected)", opts) -- "<leader>a" in coc example
+-- keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts) 
 
 -- Remap keys for apply code actions at the cursor position.
--- keyset("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", opts)
+keyset("n", "<leader>gra", "<Plug>(coc-codeaction-cursor)", opts)-- "<leader>ac" in coc example
 -- Remap keys for apply source code actions for current file.
 -- keyset("n", "<leader>as", "<Plug>(coc-codeaction-source)", opts)
 -- Apply the most preferred quickfix action on the current line.
