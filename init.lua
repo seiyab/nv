@@ -15,6 +15,10 @@ vim.opt.listchars = { tab = '> ', nbsp = '.' }
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+if vim.o.background == 'dark' then
+	vim.cmd('colorscheme lunaperche')
+end
+
 vim.o.inccommand = 'split'
 vim.o.cursorline = true
 vim.o.confirm = true
