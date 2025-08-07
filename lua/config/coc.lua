@@ -177,3 +177,8 @@ local opts = {silent = true, nowait = true}
 -- keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list
 -- keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+
+
+--------------- coc-git ---------------
+keyset("n", "[g", "<Plug>(coc-git-prevchunk)", {silent=true})
+keyset("n", "]g", "<Plug>(coc-git-nextchunk)", {silent=true})
