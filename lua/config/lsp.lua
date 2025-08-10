@@ -1,15 +1,16 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		tag = "v2.4.0",
 		dependencies = {
 			-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-			{ "mason-org/mason.nvim", opts = {} },
-			"mason-org/mason-lspconfig.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			{ "mason-org/mason.nvim", opts = {}, tag = "v2.0.1" },
+			{ "mason-org/mason-lspconfig.nvim", tag = "v2.1.0" },
+			{ "WhoIsSethDaniel/mason-tool-installer.nvim", commit = "517ef5994ef9d6b738322664d5fdd948f0fdeb46" },
 
 			-- Useful status updates for LSP.
 			-- { 'j-hui/fidget.nvim', opts = {} },
-			"saghen/blink.cmp",
+			{ "saghen/blink.cmp", tag = "v1.6.0" }
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
