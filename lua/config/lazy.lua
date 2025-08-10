@@ -25,7 +25,7 @@ require("lazy").setup({
       event = 'VimEnter',
       tag = '0.1.8',
     },
-    { 'neoclide/coc.nvim', branch = 'release' },
+	require("config.lsp"),
     { 'tpope/vim-surround', tag = 'v2.2' },
     {
       'stevearc/oil.nvim',
