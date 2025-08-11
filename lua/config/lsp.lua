@@ -154,7 +154,12 @@ return {
 			--  - settings (table): Override the default settings passed when initializing the server.
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
-				cspell_ls = {},
+				cspell_ls = {
+					root_dir = function(fname)
+						if fname:match("^oil://") then return nil end
+						return require('lspconfig.util').find_git_ancestor(fname)
+					end
+				},
 				gopls = {},
 				ts_ls = {},
 				eslint = {},
