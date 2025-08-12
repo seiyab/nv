@@ -26,6 +26,7 @@ require("lazy").setup({
       tag = '0.1.8',
     },
 	require("config.lsp"),
+	require("config.blink-cmp"),
     { 'tpope/vim-surround', tag = 'v2.2' },
     {
       'stevearc/oil.nvim',
