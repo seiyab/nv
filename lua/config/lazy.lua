@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- import your plugins
+	require("config.gitsigns"),
     {
       'nvim-telescope/telescope.nvim',
       event = 'VimEnter',
