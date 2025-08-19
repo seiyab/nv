@@ -21,3 +21,6 @@ vim.api.nvim_create_user_command("CopyRelativePath", function()
 	vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
+vim.keymap.set({'n', 'v'}, '<leader>P', '"+P')
