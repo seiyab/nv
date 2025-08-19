@@ -36,7 +36,19 @@ require("lazy").setup({
       ---@type oil.SetupOpts
       opts = {},
       lazy = false, -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-    }
+    },
+	{
+		'juacker/git-link.nvim',
+		commit = '3022840bff0ce5e0f22ed62dc45e2c5273bb34a4',
+		keys = {
+			{
+				"<leader>cl",
+				function() require("git-link.main").copy_line_url() end,
+				desc = "[C]opy code [l]ink to clipboard",
+				mode = { "n", "x" }
+			},
+		},
+	},
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

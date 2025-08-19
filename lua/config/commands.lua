@@ -10,11 +10,6 @@ local function close_hidden_buffers()
 end
 vim.api.nvim_create_user_command("CloseHiddenBuffers", close_hidden_buffers, {})
 
-local function copy_permanent_url()
- vim.api.nvim_exec2("CocCommand git.copyPermalink", {}) 
-end
-vim.api.nvim_create_user_command("CopyPermanentUrl", copy_permanent_url, {})
-
 vim.api.nvim_create_user_command("CopyRelativePath", function()
 	local path = vim.fn.expand("%")
 	vim.fn.setreg("+", path)
