@@ -13,10 +13,26 @@ return {
 		},
 		config = function()
 			require("gitsigns").setup({
-				vim.keymap.set("n", "<leader>gp", "<Cmd>Gitsigns preview_hunk<CR>", { desc = "Preview git hunk" }),
-				vim.keymap.set("n", "]g", "<Cmd>Gitsigns nav_hunk next<CR>"),
-				vim.keymap.set("n", "[g", "<Cmd>Gitsigns nav_hunk prev<CR>"),
+				on_attach = function()
+					local gitsigns = require("gitsigns")
+					vim.keymap.set('n', ']c', function()
+						if vim.wo.diff then
+							vim.cmd.normal({']c', bang = true})
+						else
+							gitsigns.nav_hunk('next')
+						end
+					end)
+					vim.keymap.set('n', '[c', function()
+						if vim.wo.diff then
+							vim.cmd.normal({'[c', bang = true})
+						else
+							gitsigns.nav_hunk('prev')
+						end
+					end)
+				end
 			})
+		end,
+		on_attach = function()
 		end,
 	},
 }
