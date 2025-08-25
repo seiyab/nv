@@ -1,5 +1,6 @@
 {
   "blink.cmp": { "branch": "main", "commit": "10f2ebe48849726608f79e21bc9eb89c567a22f3" },
+  "copilot.vim": { "branch": "release", "commit": "f3d66c148aa60ad04c0a21d3e0a776459de09eb2" },
   "git-link.nvim": { "branch": "main", "commit": "3022840bff0ce5e0f22ed62dc45e2c5273bb34a4" },
   "gitsigns.nvim": { "branch": "main", "commit": "bbee149e00c404aa9f7a7c248b981cde953b252a" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
