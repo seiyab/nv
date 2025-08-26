@@ -37,7 +37,7 @@ require("lazy").setup({
       opts = {},
       lazy = false, -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     },
-	{ 'github/copilot.vim' },
+	require("config.copilot"),
 	{
 		'juacker/git-link.nvim',
 		commit = '3022840bff0ce5e0f22ed62dc45e2c5273bb34a4',
