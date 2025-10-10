@@ -20,4 +20,23 @@ return {
 			}
 		end
 	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		commit = '71385f191ec06ffc60e80e6b0c9a9d5daed4824c',
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		config = function ()
+			require('nvim-treesitter.configs').setup {
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = false,
+						keymaps = {
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+						},
+					},
+				},
+			}
+		end
+	},
 }
