@@ -5,7 +5,7 @@ return {
 		tag = 'v0.10.0',
 		config = function ()
 			require('nvim-treesitter.configs').setup {
-				ensure_installed = { "lua", "markdown", "typescript", "go", "json" },
+				ensure_installed = { "lua", "markdown", "typescript", "tsx", "go", "json" },
 			}
 		end
 	},
