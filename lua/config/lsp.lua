@@ -126,7 +126,6 @@ return {
 				gopls = {},
 				ts_ls = {},
 				eslint = {},
-				ocamllsp = {},
 				lua_ls = {
 					-- cmd = { ... },
 					-- filetypes = { ... },
