@@ -126,6 +126,7 @@ return {
 				gopls = {},
 				ts_ls = {},
 				eslint = {},
+				rust_analyzer = {},
 				lua_ls = {
 					-- cmd = { ... },
 					-- filetypes = { ... },

@@ -21,11 +21,6 @@ require("lazy").setup({
   spec = {
 	{ import = "config.plugins" },
 	require("config.gitsigns"),
-    {
-      'nvim-telescope/telescope.nvim',
-      event = 'VimEnter',
-      tag = '0.1.8',
-    },
 	require("config.lsp"),
 	require("config.blink-cmp"),
     { 'tpope/vim-surround', tag = 'v2.2' },
