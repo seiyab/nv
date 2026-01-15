@@ -22,7 +22,6 @@ require("lazy").setup({
 	{ import = "config.plugins" },
 	require("config.gitsigns"),
 	require("config.lsp"),
-	require("config.blink-cmp"),
     { 'tpope/vim-surround', tag = 'v2.2' },
     {
       'stevearc/oil.nvim',
