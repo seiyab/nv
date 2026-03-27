@@ -15,28 +15,29 @@ local function get_package_manager(pkg_root)
 	end
 end
 
-local function prettier_cmd_in_project(pkg_root)
+local function formatter_cmd_in_project(pkg_root, formatter_name, formatter_cmd)
 	-- Prefer local node_modules
-	local local_bin = pkg_root .. "/node_modules/.bin/prettier"
+	local bin_dir = pkg_root .. "/node_modules/.bin/"
+	local local_bin = bin_dir .. formatter_name
 	if vim.fn.executable(local_bin) == 1 then
-		return local_bin
+		return bin_dir .. formatter_cmd
 	end
 
 	-- Use package manager command if available
 	local manager = get_package_manager(pkg_root)
 	local check_cmd = ({
-		yarn = "yarn prettier --version",
-		pnpm = "pnpm prettier --version",
-		npm = "npx prettier --version",
+		yarn = "yarn " .. formatter_name .. " --version",
+		pnpm = "pnpm " .. formatter_name .. " --version",
+		npm = "npx " .. formatter_name .. " --version",
 	})[manager]
 
 	if check_cmd then
 		local ok = os.execute("cd " .. pkg_root .. " && " .. check_cmd .. " >/dev/null 2>&1")
 		if ok == true or ok == 0 then
 			return ({
-				yarn = "yarn prettier",
-				pnpm = "pnpm prettier",
-				npm = "npx prettier",
+				yarn = "yarn " .. formatter_cmd,
+				pnpm = "pnpm " .. formatter_cmd,
+				npm = "npx " .. formatter_cmd,
 			})[manager]
 		end
 	end
@@ -44,7 +45,7 @@ local function prettier_cmd_in_project(pkg_root)
 	return nil
 end
 
-local function format_with_prettier()
+local function format()
 	local bufname = vim.api.nvim_buf_get_name(0)
 	if vim.fn.filereadable(bufname) ~= 1 then
 		return
@@ -55,19 +56,30 @@ local function format_with_prettier()
 		return
 	end
 
-	local prettier = prettier_cmd_in_project(pkg_root)
-	if not prettier then
-		vim.notify("Prettier not found in project", vim.log.levels.INFO)
+	local formatters = {
+		prettier = "prettier --write",
+		biome = "biome format"
+	}
+
+	local cmd = nil
+	for name, c in pairs(formatters) do
+		cmd = formatter_cmd_in_project(pkg_root, name, c)
+		if cmd then
+			break
+		end
+	end
+	if not cmd then
+		vim.notify("Formatter not found in project", vim.log.levels.INFO)
 		return
 	end
 
 	local filepath = vim.fn.shellescape(bufname)
-	local full_cmd = string.format("cd %s && PRETTIER_EXPERIMENTAL_CLI=1 %s --write %s", pkg_root, prettier, filepath)
+	local full_cmd = string.format("cd %s && PRETTIER_EXPERIMENTAL_CLI=1 %s --write %s", pkg_root, cmd, filepath)
 	vim.cmd("silent !" .. full_cmd)
 	vim.cmd("edit!") -- reload buffer
 end
 
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.mjs", ".cjs" },
-	callback = format_with_prettier,
+	callback = format,
 })
