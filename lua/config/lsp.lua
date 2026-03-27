@@ -141,6 +141,7 @@ return {
 						},
 					},
 				},
+				stylua = {},
 			}
 
 			-- Ensure the servers and tools above are installed
