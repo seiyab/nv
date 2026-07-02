@@ -14,27 +14,5 @@ return {
 				replace_keycodes = false,
 			})
 		end,
-		-- keys = {
-			-- {
-			-- 	'<Leader>cp',
-			-- 	'<cmd>Copilot panel<cr>',
-			-- 	desc = '[C]opilot [P]anel',
-			-- 	mode = { 'n' },
-			-- },
-			-- {
-			-- 	'<C-\\>cp',
-			-- 	'<cmd>Copilot panel<cr>',
-			-- 	desc = '[C]opilot [P]anel',
-			-- 	mode = { 'i' },
-			-- },
-			-- {
-			-- 	'<C-j>',
-			-- 	'copilot#Accept("\\<CR>")',
-			-- 	desc = 'Copilot Accept',
-			-- 	mode = { 'i' },
-			-- 	expr = true,
-			-- 	replace_keycodes = false,
-			-- },
-		-- },
 	},
 }
