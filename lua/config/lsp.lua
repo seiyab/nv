@@ -127,6 +127,7 @@ return {
 				gopls = {},
 				ts_ls = {},
 				eslint = {},
+				oxlint = {},
 				rust_analyzer = {},
 				lua_ls = {
 					-- cmd = { ... },

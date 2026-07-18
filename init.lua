@@ -38,3 +38,5 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 require("config.prettier")
 
 require("config.commands")
+
+vim.g.rustfmt_autosave = 1
